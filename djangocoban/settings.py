@@ -25,7 +25,7 @@ SECRET_KEY = 'gu#bfi#swc$z4p@e8(k7tom(=hg8mkzwlqwrocbvl#d)xy$(h+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ancient-spire-69822.herokuapp.com','127.0.0.1']
 # Để mở được trang 404
 # DEBUG = False
 # ALLOWED_HOSTS = ["*"]
@@ -124,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/var/www/static/',
