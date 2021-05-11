@@ -26,7 +26,7 @@ handler500 = Error500
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Home.urls')),
-    path('blog/',include('blog.urls')),z
+    path('blog/',include('blog.urls')),
 
 ]
 if settings.DEBUG:
