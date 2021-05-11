@@ -1,0 +1,24 @@
+{% extends "pages/base.html" %}
+
+{% block title %} {{ post.title }} {% endblock %}
+{% block content %}
+	<!-- safe giúp ta có thể thêm thẻ html trong phần body khi sửa đổi trên admin -->
+	<!-- linebreaks giúp trang html tự thêm thẻ <br> khi ta ngắt dòng trên  admin -->
+	<h3>{{ post.body|safe|linebreaks }}</h3>
+	<h4>is written on {{ post.date|date:"d-m-Y" }}</h4>
+	<img src="{{ post.image.url }}" width="150" height="150" >
+
+{% for comment in post.comments.all %}
+	<h4><strong>{{ comment.author }}</strong></h4>
+	<h6><p>{{ comment.date }}</p></h6>
+	<p>{{ comment.body }}</p>
+{% endfor %}
+{% if user.username %}
+	<form action="{% url 'post' post.id %}" method="POST">{% csrf_token %}
+		<label>Bình luận</label>
+		{{form.body}}
+		<br>
+		<input type="submit" value="Bình luận" name="">
+	</form>
+{% endif %}
+{% endblock %}

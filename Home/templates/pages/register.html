@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF8">
+	<title>Register</title>
+</head>
+<body>
+	<center>
+		<form method="POST" action="."> {% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" value="Đăng ký" name="">
+		</form>
+		
+	</center>
+</body>
+</html>

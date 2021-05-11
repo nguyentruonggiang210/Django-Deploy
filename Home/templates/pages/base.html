@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<meata charset="UTF-8">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' type = "text/css" %}">
+		<title>{% block title %}{% endblock %}</title>
+		<style>
+			html,body{
+				height: 100%;
+				background-color: #f6f6f6;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid" style="min-height: 95%;">
+			<div class="row">
+				<div class="col-sm-2">
+					<center><img src="{% static 'img/ferrari-spider.jpg' %}" class="responsive-img" style="max-height: 150px"></center>
+				</div>
+				<div class="col-sm-10">
+					<center><h1>Blog của Giang</h1></center>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-sm-2">
+					<div class="bs-sliderbar" style="background-color: white;text-align: center;">
+						<!-- <ul class="nav flex-column">
+							<li><a href="/">Thông tin cá nhân</a></li>
+							<li><a href="/blog">Bài viết</a></li>
+							<li><a href="/contact">Liên hệ</a></li>
+						</ul>
+					-->
+						<nav class="nav flex-column">
+							<a href="/" class="nav-link">Thông tin cá nhân</a>
+							<a href="{% url 'blog' %}" class="nav-link">Bài viết</a>
+							<a href="{% url 'contact' %}" class="nav-link">Liên hệ</a>
+						</nav>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="container-fluid">
+						{% block content %}
+						{% endblock %}
+					</div>
+				</div>
+				<div class="col-sm-1">
+					{% if user.username %}
+						<p>Xin chào {{user.username}}</p>
+						<p><a href="{% url 'logout' %}">Đăng xuất</a></p>
+					{% else %}
+						<p><a href="{% url 'register' %}">Đăng ký</a></p>
+						<p><a href="{% url 'login' %}">Đăng nhập</a></p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container-fluid">
+				<a href="#">Facebook</a>
+				<a href="#">Google</a> 
+			</div>
+		</footer>
+	</body>
+</html>
