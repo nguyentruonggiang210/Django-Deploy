@@ -39,7 +39,7 @@ SECRET_KEY = 'gu#bfi#swc$z4p@e8(k7tom(=hg8mkzwlqwrocbvl#d)xy$(h+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','']
+ALLOWED_HOSTS = ['127.0.0.1','ancient-spire-69822.herokuapp.com']
 # Để mở được trang 404
 # DEBUG = False
 # ALLOWED_HOSTS = ["*"]
