@@ -123,8 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'live-static-files','static-root')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'live-static','static-root')
+# TATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
@@ -133,4 +134,4 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_URL = "/Media/"
-MEDIA_ROOT = os.path.join(BASE_DIR,'live-static-files',"media-root")
+MEDIA_ROOT = os.path.join(BASE_DIR,'live-static',"media-root")
